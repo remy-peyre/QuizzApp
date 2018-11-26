@@ -1,5 +1,5 @@
 //
-//  GameController.swift
+//  MultiController.swift
 //  QuizzAPP
 //
 //  Created by Remy Peyre on 26/11/2018.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GameController: UIViewController {
+class MultiController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,19 +21,7 @@ class GameController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBOutlet weak var buttonSolo: UIButton!
-    @IBAction func buttonSolo(_ sender: Any) {
-        print("Solo")
-        self.performSegue(withIdentifier: "linkToSolo", sender: nil)
-    }
-    
-    @IBOutlet weak var buttonMulti: UIButton!
-    @IBAction func buttonMulti(_ sender: UIButton) {
-        print("Multi")
-        self.performSegue(withIdentifier: "linkToMulti", sender: nil)
-    }
-    
-    
+
     /*
     // MARK: - Navigation
 

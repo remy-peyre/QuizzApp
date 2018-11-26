@@ -14,6 +14,8 @@
 		DFE8877121AC38A900B1D9F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFE8876F21AC38A900B1D9F0 /* LaunchScreen.storyboard */; };
 		DFE8877921AC3D9100B1D9F0 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE8877821AC3D9100B1D9F0 /* HomeController.swift */; };
 		DFE8877B21AC433F00B1D9F0 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE8877A21AC433F00B1D9F0 /* GameController.swift */; };
+		DFE8877D21AC48F200B1D9F0 /* SoloController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE8877C21AC48F200B1D9F0 /* SoloController.swift */; };
+		DFE8877F21AC48FF00B1D9F0 /* MultiController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE8877E21AC48FF00B1D9F0 /* MultiController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		DFE8877221AC38A900B1D9F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DFE8877821AC3D9100B1D9F0 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		DFE8877A21AC433F00B1D9F0 /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
+		DFE8877C21AC48F200B1D9F0 /* SoloController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoloController.swift; sourceTree = "<group>"; };
+		DFE8877E21AC48FF00B1D9F0 /* MultiController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,8 @@
 				DFE8877221AC38A900B1D9F0 /* Info.plist */,
 				DFE8877821AC3D9100B1D9F0 /* HomeController.swift */,
 				DFE8877A21AC433F00B1D9F0 /* GameController.swift */,
+				DFE8877C21AC48F200B1D9F0 /* SoloController.swift */,
+				DFE8877E21AC48FF00B1D9F0 /* MultiController.swift */,
 			);
 			path = QuizzAPP;
 			sourceTree = "<group>";
@@ -143,8 +149,10 @@
 			files = (
 				DFE8876921AC38A700B1D9F0 /* ViewController.swift in Sources */,
 				DFE8877B21AC433F00B1D9F0 /* GameController.swift in Sources */,
+				DFE8877D21AC48F200B1D9F0 /* SoloController.swift in Sources */,
 				DFE8876721AC38A700B1D9F0 /* AppDelegate.swift in Sources */,
 				DFE8877921AC3D9100B1D9F0 /* HomeController.swift in Sources */,
+				DFE8877F21AC48FF00B1D9F0 /* MultiController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
