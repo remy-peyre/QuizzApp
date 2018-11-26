@@ -12,6 +12,8 @@
 		DFE8876C21AC38A700B1D9F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFE8876A21AC38A700B1D9F0 /* Main.storyboard */; };
 		DFE8876E21AC38A900B1D9F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFE8876D21AC38A900B1D9F0 /* Assets.xcassets */; };
 		DFE8877121AC38A900B1D9F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFE8876F21AC38A900B1D9F0 /* LaunchScreen.storyboard */; };
+		DFE8877921AC3D9100B1D9F0 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE8877821AC3D9100B1D9F0 /* HomeController.swift */; };
+		DFE8877B21AC433F00B1D9F0 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE8877A21AC433F00B1D9F0 /* GameController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		DFE8876D21AC38A900B1D9F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DFE8877021AC38A900B1D9F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DFE8877221AC38A900B1D9F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DFE8877821AC3D9100B1D9F0 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		DFE8877A21AC433F00B1D9F0 /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 				DFE8876D21AC38A900B1D9F0 /* Assets.xcassets */,
 				DFE8876F21AC38A900B1D9F0 /* LaunchScreen.storyboard */,
 				DFE8877221AC38A900B1D9F0 /* Info.plist */,
+				DFE8877821AC3D9100B1D9F0 /* HomeController.swift */,
+				DFE8877A21AC433F00B1D9F0 /* GameController.swift */,
 			);
 			path = QuizzAPP;
 			sourceTree = "<group>";
@@ -136,7 +142,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DFE8876921AC38A700B1D9F0 /* ViewController.swift in Sources */,
+				DFE8877B21AC433F00B1D9F0 /* GameController.swift in Sources */,
 				DFE8876721AC38A700B1D9F0 /* AppDelegate.swift in Sources */,
+				DFE8877921AC3D9100B1D9F0 /* HomeController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
