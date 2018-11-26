@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B93471F2F78EA0C837EE07F3 /* Pods_QuizzAPP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F8DACF9C8CF300093E74614 /* Pods_QuizzAPP.framework */; };
 		DFE8876721AC38A700B1D9F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE8876621AC38A700B1D9F0 /* AppDelegate.swift */; };
 		DFE8876921AC38A700B1D9F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE8876821AC38A700B1D9F0 /* ViewController.swift */; };
 		DFE8876C21AC38A700B1D9F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFE8876A21AC38A700B1D9F0 /* Main.storyboard */; };
@@ -19,6 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		11F2F5E89602F555107258D6 /* Pods-QuizzAPP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuizzAPP.release.xcconfig"; path = "Pods/Target Support Files/Pods-QuizzAPP/Pods-QuizzAPP.release.xcconfig"; sourceTree = "<group>"; };
+		24A45D76069A2426E4B2C9E2 /* Pods-QuizzAPP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuizzAPP.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QuizzAPP/Pods-QuizzAPP.debug.xcconfig"; sourceTree = "<group>"; };
+		6F8DACF9C8CF300093E74614 /* Pods_QuizzAPP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuizzAPP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFE8876321AC38A700B1D9F0 /* QuizzAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuizzAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFE8876621AC38A700B1D9F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFE8876821AC38A700B1D9F0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -37,17 +41,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B93471F2F78EA0C837EE07F3 /* Pods_QuizzAPP.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F7DA45CCDE8AEDF15BF0555 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				24A45D76069A2426E4B2C9E2 /* Pods-QuizzAPP.debug.xcconfig */,
+				11F2F5E89602F555107258D6 /* Pods-QuizzAPP.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BC3E6B248BE4B278EC825081 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6F8DACF9C8CF300093E74614 /* Pods_QuizzAPP.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DFE8875A21AC38A700B1D9F0 = {
 			isa = PBXGroup;
 			children = (
 				DFE8876521AC38A700B1D9F0 /* QuizzAPP */,
 				DFE8876421AC38A700B1D9F0 /* Products */,
+				0F7DA45CCDE8AEDF15BF0555 /* Pods */,
+				BC3E6B248BE4B278EC825081 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,9 +107,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DFE8877521AC38A900B1D9F0 /* Build configuration list for PBXNativeTarget "QuizzAPP" */;
 			buildPhases = (
+				66767033B37C7CF3388D187C /* [CP] Check Pods Manifest.lock */,
 				DFE8875F21AC38A700B1D9F0 /* Sources */,
 				DFE8876021AC38A700B1D9F0 /* Frameworks */,
 				DFE8876121AC38A700B1D9F0 /* Resources */,
+				A332E7022EAC0EE991AE77B4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -141,6 +167,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		66767033B37C7CF3388D187C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-QuizzAPP-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A332E7022EAC0EE991AE77B4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-QuizzAPP/Pods-QuizzAPP-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-QuizzAPP/Pods-QuizzAPP-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DFE8875F21AC38A700B1D9F0 /* Sources */ = {
@@ -294,6 +359,7 @@
 		};
 		DFE8877621AC38A900B1D9F0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24A45D76069A2426E4B2C9E2 /* Pods-QuizzAPP.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -311,6 +377,7 @@
 		};
 		DFE8877721AC38A900B1D9F0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 11F2F5E89602F555107258D6 /* Pods-QuizzAPP.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
