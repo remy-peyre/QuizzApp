@@ -39,8 +39,14 @@ class HomeController: UIViewController {
             print("Request: \(String(describing: response.request))")   // original url request
             print("Response: \(String(describing: response.response))") // http url response
             print("Result: \(response.result)")                         // response serialization result
+            
             if let json = response.result.value {
                 print("JSON: \(json)") // serialized json response
+                print("status")
+                let status = response.response?.statusCode
+                if status == 200 {
+                    self.performSegue(withIdentifier: "linkToHome", sender: nil)
+                }
             }
             
             if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
