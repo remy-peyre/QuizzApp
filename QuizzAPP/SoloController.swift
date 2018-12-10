@@ -13,14 +13,53 @@ class SoloController: UIViewController {
     var numberQuestion = 0
     var questions: Array<Any?> = []
     
+    var seconds = 10 //This variable will hold a starting value of seconds. It could
+    var timer = Timer()
+    @IBOutlet weak var counterField: UILabel!
     @IBOutlet weak var numberQuestionField: UILabel!
     @IBOutlet weak var questionField: UILabel!
+    
+    @IBAction func buttonTrue(_ sender: Any) {
+        answer(value: true)
+    }
+    
+    @IBAction func buttonFalse(_ sender: Any) {
+        answer(value: false)
+    }
+    
+    func answer(value : Bool) {
+        print(value)
+        numberQuestion = numberQuestion + 1
+        seconds = 10
+    }
+    
+    @objc func handleEverySecond() {
+        seconds = seconds - 1
+        if (self.numberQuestion > 9) {
+            timer.invalidate()
+            self.performSegue(withIdentifier: "resume", sender: nil)
+            return
+        }
+        let question = self.questions[self.numberQuestion] as? NSDictionary
+        self.numberQuestionField.text = "\(self.numberQuestion + 1)"
+        self.questionField.text = question?["question"] as! String
+        if (self.seconds == 0) {
+            self.numberQuestion = self.numberQuestion + 1
+            self.seconds = 10
+        }
+        self.counterField.text = "\(self.seconds)s"
+    }
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        //self.runTimer()
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(handleEverySecond), userInfo: nil, repeats: true)
         getQuestions()
     }
-
+    
     func getQuestions() {
         let head = ["Content-Type": "application/x-www-form-urlencoded"]
         Alamofire.request("https://opentdb.com/api.php?amount=10&type=boolean", method: .post, encoding: URLEncoding(), headers: head).responseJSON { response in
@@ -35,14 +74,6 @@ class SoloController: UIViewController {
                 if status == 0 {
                     self.questions = json["results"] as! Array<Any?>
                     let questionsSize =  self.questions.count  as Int
-                    while (self.numberQuestion < questionsSize) {
-                        print("Question")
-                        let question = self.questions[self.numberQuestion] as? NSDictionary
-                        self.numberQuestionField.text = "\(self.numberQuestion)"
-                        self.questionField.text = question?["question"] as! String
-                        print(question?["question"])
-                        self.numberQuestion = self.numberQuestion + 1
-                    }
                     print("OK")
                 }
             }
