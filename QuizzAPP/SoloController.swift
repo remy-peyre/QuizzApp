@@ -15,6 +15,9 @@ class SoloController: UIViewController {
     
     var seconds = 10 //This variable will hold a starting value of seconds. It could
     var timer = Timer()
+    var arrayGoodAnswers:Array<Any> = []
+    var arrayPlayerAnswers:Array<Bool> = []
+    
     @IBOutlet weak var counterField: UILabel!
     @IBOutlet weak var numberQuestionField: UILabel!
     @IBOutlet weak var questionField: UILabel!
@@ -28,24 +31,32 @@ class SoloController: UIViewController {
     }
     
     func answer(value : Bool) {
-        print(value)
+        let question = self.questions[self.numberQuestion] as? NSDictionary
+        //print(question?["correct_answer"] as? Bool ?? <#default value#>)
+        if let answer = question?["correct_answer"]{
+            arrayGoodAnswers.append(answer)
+            arrayPlayerAnswers.append(value)
+        }
         numberQuestion = numberQuestion + 1
-        seconds = 10
+        seconds = 11
     }
     
     @objc func handleEverySecond() {
         seconds = seconds - 1
         if (self.numberQuestion > 9) {
             timer.invalidate()
+            UserDefaults.standard.set(arrayGoodAnswers, forKey:"results")
+            UserDefaults.standard.set(arrayPlayerAnswers, forKey:"PlayerAnswers")
             self.performSegue(withIdentifier: "resume", sender: nil)
             return
         }
         let question = self.questions[self.numberQuestion] as? NSDictionary
+        
         self.numberQuestionField.text = "\(self.numberQuestion + 1)"
         self.questionField.text = question?["question"] as! String
         if (self.seconds == 0) {
             self.numberQuestion = self.numberQuestion + 1
-            self.seconds = 10
+            self.seconds = 11
         }
         self.counterField.text = "\(self.seconds)s"
     }
@@ -97,6 +108,5 @@ class SoloController: UIViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
-
+*/
 }

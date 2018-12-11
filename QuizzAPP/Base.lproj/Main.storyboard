@@ -284,36 +284,54 @@
                         <outlet property="counterField" destination="pt3-Uy-da8" id="wrM-Mh-oIt"/>
                         <outlet property="numberQuestionField" destination="gXi-35-Zmf" id="9qx-hb-GhM"/>
                         <outlet property="questionField" destination="nco-CP-hFK" id="h6U-eb-N08"/>
-                        <segue destination="Rgn-6f-ea0" kind="presentation" identifier="resume" id="ll2-ZN-1OJ"/>
+                        <segue destination="eWu-dH-Qqb" kind="presentation" identifier="resume" id="Fvu-43-3vj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qa3-9T-Ugy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2407.1999999999998" y="-241.52923538230885"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="J8h-F3-93h">
+        <!--Resume Table View Controller-->
+        <scene sceneID="xno-gb-h2M">
             <objects>
-                <viewController id="Rgn-6f-ea0" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="mIf-sC-bso">
+                <tableViewController id="eWu-dH-Qqb" customClass="ResumeTableViewController" customModule="QuizzAPP" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="qGW-gb-4Vr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Result" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bza-Ik-LUS">
-                                <rect key="frame" x="116" y="111" width="141" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="Rfx-JB-2MD"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3Ef-St-1mm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="vYr-eH-8rr">
+                            <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="back to menu"/>
+                            <connections>
+                                <action selector="btnSoloToMenu:" destination="eWu-dH-Qqb" eventType="touchUpInside" id="ef7-Wz-o5W"/>
+                            </connections>
+                        </button>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="reuseIdentifier" id="eqE-Mp-SGD">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eqE-Mp-SGD" id="yE6-oG-g0B">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="eWu-dH-Qqb" id="eEJ-GI-mR0"/>
+                            <outlet property="delegate" destination="eWu-dH-Qqb" id="Kz9-7x-bYL"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <segue destination="Sdm-iw-rGd" kind="presentation" identifier="backmenu" id="Lp6-Fx-kPB"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AVM-j1-4Jg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3568.8000000000002" y="-242.42878560719643"/>
+            <point key="canvasLocation" x="1406" y="-681"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Lp6-Fx-kPB"/>
+    </inferredMetricsTieBreakers>
 </document>
