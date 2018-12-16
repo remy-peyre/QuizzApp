@@ -9,38 +9,50 @@
 import UIKit
 
 class ResumeMultiTableViewController: UITableViewController {
+    var arrayPlayers: Array<String> = []
+    var arrayGoodAnswers:Array<Any> = []
+    var arrayPlayerAnswers:Array<String> = []
+    var numberGoodAnswers: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        print("resume array players",self.arrayPlayers)
+        print("resume array good", self.arrayGoodAnswers)
+        print("resume array players answers",self.arrayPlayerAnswers)
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return self.arrayGoodAnswers.count + 1
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseResumeMultiIdentifier", for: indexPath)
         // Configure the cell...
-
+        
+        if (indexPath.row < self.arrayGoodAnswers.count) {
+            var playerAnswerArray = arrayPlayerAnswers[indexPath.row].split(separator: "-")
+            cell.textLabel?.text = arrayGoodAnswers[indexPath.row] as! String +  " - " + playerAnswerArray[1] + " answer:" + playerAnswerArray[2]
+            if (self.arrayGoodAnswers[indexPath.row] as! String == playerAnswerArray[2]) {
+                cell.textLabel?.textColor = UIColor.green
+                numberGoodAnswers = numberGoodAnswers + 1
+            } else {
+                cell.textLabel?.textColor = UIColor.red
+            }
+        } else {
+            cell.textLabel?.text = "Your score: \(numberGoodAnswers)"
+        }
+        
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.

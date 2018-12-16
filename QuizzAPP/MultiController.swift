@@ -48,16 +48,19 @@ class MultiController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if let resumeMultiTableViewController = segue.destination as? ResumeMultiTableViewController {
+            resumeMultiTableViewController.arrayPlayers = self.arrayPlayers
+            resumeMultiTableViewController.arrayGoodAnswers = self.arrayGoodAnswers
+            resumeMultiTableViewController.arrayPlayerAnswers = self.arrayPlayerAnswers
+        }
     }
-    */
+    
 
     func getQuestions() {
         self.totalQuestions = self.arrayPlayers.count*5
@@ -114,8 +117,8 @@ class MultiController: UIViewController {
         if (self.numberQuestion > (self.totalQuestions - 1)) {
             timer.invalidate()
             print("playeranswers",arrayPlayerAnswers)
-            UserDefaults.standard.set(arrayGoodAnswers, forKey:"results")
-            UserDefaults.standard.set(arrayPlayerAnswers, forKey:"PlayerAnswers")
+            //UserDefaults.standard.set(arrayGoodAnswers, forKey:"results")
+            //UserDefaults.standard.set(arrayPlayerAnswers, forKey:"PlayerAnswers")
             self.performSegue(withIdentifier: "resumeMulti", sender: nil)
             return
         }
