@@ -115,7 +115,7 @@ class MultiController: UIViewController {
             timer.invalidate()
             UserDefaults.standard.set(arrayGoodAnswers, forKey:"results")
             UserDefaults.standard.set(arrayPlayerAnswers, forKey:"PlayerAnswers")
-            self.performSegue(withIdentifier: "resume", sender: nil)
+            self.performSegue(withIdentifier: "resumeMulti", sender: nil)
             return
         }
         let question = self.questions[self.numberQuestion] as? NSDictionary

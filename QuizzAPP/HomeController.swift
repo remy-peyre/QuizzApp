@@ -18,6 +18,12 @@ class HomeController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        /*let imgBg = UIImageView()
+        imgBg.image = UIImage(named: "home")
+        imgBg.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
+        
+        self.view.addSubview(imgBg)*/
 
         // Do any additional setup after loading the view.
         if (UserDefaults.standard.stringArray(forKey: "scores_player") == nil)  {

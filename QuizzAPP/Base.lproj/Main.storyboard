@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Sdm-iw-rGd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DID-MB-zRI">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -36,6 +36,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="center" semanticContentAttribute="forceRightToLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bghome" translatesAutoresizingMaskIntoConstraints="NO" id="wnj-yH-wTg">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m2v-7i-2iS">
                                 <rect key="frame" x="134" y="517" width="107" height="49"/>
                                 <color key="backgroundColor" red="1" green="0.32849365139999998" blue="0.1824847648" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -74,7 +78,7 @@
                                 <color key="highlightedColor" red="1" green="0.32849365139999998" blue="0.1824847648" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.45882352941176469" green="0.47843137254901963" blue="0.47843137254901963" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="uGj-Rr-LqX" firstAttribute="bottom" secondItem="m2v-7i-2iS" secondAttribute="bottom" constant="100.5" id="1eR-6g-4lM"/>
                             <constraint firstItem="uGj-Rr-LqX" firstAttribute="trailing" secondItem="QIj-u1-vk5" secondAttribute="trailing" constant="82" id="4SG-7M-OQO"/>
@@ -152,7 +156,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ga4-cf-jTn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1405.5999999999999" y="130.88455772113943"/>
+            <point key="canvasLocation" x="1516" y="131"/>
         </scene>
         <!--Dashboard Table View Controller-->
         <scene sceneID="nla-JQ-ie0">
@@ -180,7 +184,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TWx-k3-Iwt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1406" y="1119"/>
+            <point key="canvasLocation" x="654" y="1181"/>
         </scene>
         <!--Choose Player Controller-->
         <scene sceneID="A5l-DU-Dln">
@@ -239,7 +243,35 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uUu-f1-1GL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2525.5999999999999" y="130.88455772113943"/>
+            <point key="canvasLocation" x="2498" y="550"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="WGt-fE-c5v">
+            <objects>
+                <tableViewController id="efv-fP-SVr" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="UAV-k7-nGf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="3XL-b7-VXC">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3XL-b7-VXC" id="nKZ-VR-Fjv">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="efv-fP-SVr" id="50S-CG-Zbs"/>
+                            <outlet property="delegate" destination="efv-fP-SVr" id="neN-Zd-nAc"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uEQ-ZR-T2a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2497" y="1325"/>
         </scene>
         <!--Multi Controller-->
         <scene sceneID="iKa-uL-b8M">
@@ -316,11 +348,12 @@
                         <outlet property="numberQuestionField" destination="oOS-Le-9j0" id="0gf-cq-Mhp"/>
                         <outlet property="questionField" destination="RzA-Io-LWX" id="5hW-iA-2Mf"/>
                         <outlet property="turnField" destination="WMk-eZ-Gtu" id="b0e-4v-94O"/>
+                        <segue destination="efv-fP-SVr" kind="presentation" identifier="resumeMulti" id="5KP-nb-zS3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6pF-FG-9WO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3480.8000000000002" y="130.88455772113943"/>
+            <point key="canvasLocation" x="3481" y="549"/>
         </scene>
         <!--Solo Controller-->
         <scene sceneID="F9b-mv-hIM">
@@ -395,7 +428,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qa3-9T-Ugy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2761" y="-660"/>
+            <point key="canvasLocation" x="2497" y="-198"/>
         </scene>
         <!--Resume Table View Controller-->
         <scene sceneID="xno-gb-h2M">
@@ -434,9 +467,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AVM-j1-4Jg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1406" y="-681"/>
+            <point key="canvasLocation" x="1516" y="-682"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bghome" width="534" height="949"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="GDb-OB-Xym"/>
     </inferredMetricsTieBreakers>
