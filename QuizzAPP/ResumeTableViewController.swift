@@ -10,8 +10,9 @@ import UIKit
 
 class ResumeTableViewController: UITableViewController {
     let textField = UITextField()
-    var arrayResult:Array<Any?> = []
-    var playerAnswers:Array<Bool?> = []
+    var arrayResult:Array<String> = []
+    var playerAnswers:Array<String> = []
+    var playerAnswersTest:Array<String> = []
     var numberGoodAnswers = 0
     
     @IBAction func btnSoloToMenu(_ sender: Any) {
@@ -28,14 +29,14 @@ class ResumeTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
-        if let results = UserDefaults.standard.value(forKey: "results")  {
-            arrayResult = results as! Array<Any?>
-            print(arrayResult)
+        if let results = UserDefaults.standard.stringArray(forKey: "results")  {
+            arrayResult = results
+            print("array result:", arrayResult)
         }
         
-        if let results = UserDefaults.standard.value(forKey: "PlayerAnswers")  {
-            playerAnswers = results as! Array<Bool?>
-            print(playerAnswers)
+        if let results = UserDefaults.standard.stringArray(forKey: "PlayerAnswers")  {
+            playerAnswers = results
+            print("player answers:",playerAnswers)
         }
     }
 
@@ -56,23 +57,12 @@ class ResumeTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
         // Configure the cell...
         if (indexPath.row < 10) {
-            if let valueAnswer = arrayResult[indexPath.row] {
-                if let valuePlayerAnswer = playerAnswers[indexPath.row] {
-                    var playerAnswerStr = ""
-                    if valuePlayerAnswer==true {
-                        playerAnswerStr = "True"
-                    } else {
-                        playerAnswerStr = "False"
-                    }
-                    cell.textLabel?.text = valueAnswer as! String +  " - Your answer:" + playerAnswerStr
-                    //print(valueAnswer as! String)
-                    if (playerAnswerStr == valueAnswer as! String) {
-                        cell.textLabel?.textColor = UIColor.green
-                        numberGoodAnswers = numberGoodAnswers + 1
-                    } else {
-                        cell.textLabel?.textColor = UIColor.red
-                    }
-                }
+            cell.textLabel?.text = arrayResult[indexPath.row] +  " - Your answer:" + arrayResult[indexPath.row]
+            if (arrayResult[indexPath.row] == arrayResult[indexPath.row]) {
+                cell.textLabel?.textColor = UIColor.green
+                numberGoodAnswers = numberGoodAnswers + 1
+            } else {
+                cell.textLabel?.textColor = UIColor.red
             }
         } else {
             cell.textLabel?.text = "Your score: \(numberGoodAnswers)"

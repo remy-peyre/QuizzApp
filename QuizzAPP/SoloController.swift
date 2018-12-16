@@ -16,7 +16,7 @@ class SoloController: UIViewController {
     var seconds = 10 //This variable will hold a starting value of seconds. It could
     var timer = Timer()
     var arrayGoodAnswers:Array<Any> = []
-    var arrayPlayerAnswers:Array<Bool> = []
+    var arrayPlayerAnswers:Array<String> = []
     
     @IBOutlet weak var counterField: UILabel!
     @IBOutlet weak var numberQuestionField: UILabel!
@@ -30,12 +30,19 @@ class SoloController: UIViewController {
         answer(value: false)
     }
     
+    func convertBoolToString(value: Bool) -> String {
+        if value {
+            return "True"
+        } else {
+            return "False"
+        }
+    }
+    
     func answer(value : Bool) {
         let question = self.questions[self.numberQuestion] as? NSDictionary
-        //print(question?["correct_answer"] as? Bool ?? <#default value#>)
         if let answer = question?["correct_answer"]{
             arrayGoodAnswers.append(answer)
-            arrayPlayerAnswers.append(value)
+            arrayPlayerAnswers.append(convertBoolToString(value: value))
         }
         numberQuestion = numberQuestion + 1
         seconds = 11
