@@ -126,7 +126,10 @@ class MultiController: UIViewController {
         
         self.numberQuestionField.text = "\(self.numberQuestion + 1)"
         self.turnField.text = "It's " + arrayPlayers[self.currentPlayer] + " turn"
-        self.questionField.text = question?["question"] as! String
+        let questionText = question?["question"] as? String
+        let questionTextDecoded = questionText?.htmlDecoded
+        
+        self.questionField.text = questionTextDecoded
         if (self.seconds == 0) {
             self.numberQuestion = self.numberQuestion + 1
             self.seconds = 11
