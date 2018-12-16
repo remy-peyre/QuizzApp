@@ -10,6 +10,12 @@ import UIKit
 
 class DashboardTableViewController: UITableViewController {
     var arrayPlayerScores:Array<String> = []
+    
+    
+    @IBAction func dashboardToMenu(_ sender: Any) {
+        self.performSegue(withIdentifier: "DashboardToMenu", sender: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

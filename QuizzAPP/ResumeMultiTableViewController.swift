@@ -14,6 +14,12 @@ class ResumeMultiTableViewController: UITableViewController {
     var arrayPlayerAnswers:Array<String> = []
     var numberGoodAnswers: Int = 0
 
+    
+    @IBAction func btnMultiToMenu(_ sender: Any) {
+        self.performSegue(withIdentifier: "multiBackToMenu", sender: nil)
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
