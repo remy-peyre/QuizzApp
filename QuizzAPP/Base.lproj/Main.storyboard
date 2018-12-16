@@ -130,6 +130,14 @@
                                     <action selector="buttonMulti:" destination="Sdm-iw-rGd" eventType="touchUpInside" id="r8o-zb-afr"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2RS-t1-GQI">
+                                <rect key="frame" x="150" y="540" width="75" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Dashboard"/>
+                                <connections>
+                                    <action selector="buttonDashboard:" destination="Sdm-iw-rGd" eventType="touchUpInside" id="VvQ-cj-QbG"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="SaF-hq-5qa"/>
@@ -139,11 +147,40 @@
                         <outlet property="buttonSolo" destination="KJV-15-58I" id="Wd3-01-SLP"/>
                         <segue destination="36q-8Q-tEu" kind="presentation" identifier="linkToSolo" id="bRb-AE-eUF"/>
                         <segue destination="1rt-Aw-EFb" kind="presentation" identifier="linkToMulti" id="NIu-UJ-UuL"/>
+                        <segue destination="WYz-ys-zYz" kind="presentation" identifier="linkToDashboard" id="gVF-ZC-MSP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ga4-cf-jTn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1405.5999999999999" y="130.88455772113943"/>
+        </scene>
+        <!--Dashboard Table View Controller-->
+        <scene sceneID="nla-JQ-ie0">
+            <objects>
+                <tableViewController id="WYz-ys-zYz" customClass="DashboardTableViewController" customModule="QuizzAPP" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="igb-hF-LpF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseDashboardIdentifier" id="buT-O6-ROF">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="buT-O6-ROF" id="Dw0-m2-bTE">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="WYz-ys-zYz" id="e0H-ec-XBh"/>
+                            <outlet property="delegate" destination="WYz-ys-zYz" id="Pvc-on-3za"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TWx-k3-Iwt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1406" y="1119"/>
         </scene>
         <!--Choose Player Controller-->
         <scene sceneID="A5l-DU-Dln">
@@ -391,6 +428,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Lp6-Fx-kPB"/>
+        <segue reference="GDb-OB-Xym"/>
     </inferredMetricsTieBreakers>
 </document>

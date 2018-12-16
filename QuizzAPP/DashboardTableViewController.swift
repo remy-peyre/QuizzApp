@@ -1,24 +1,15 @@
 //
-//  ResumeTableViewController.swift
+//  DashboardTableViewController.swift
 //  QuizzAPP
 //
-//  Created by so on 11/12/2018.
+//  Created by so on 16/12/2018.
 //  Copyright © 2018 Remy Peyre. All rights reserved.
 //
 
 import UIKit
 
-class ResumeTableViewController: UITableViewController {
-    let textField = UITextField()
-    var arrayResult:Array<Any?> = []
-    var playerAnswers:Array<Bool?> = []
-    var numberGoodAnswers = 0
-    
-    @IBAction func btnSoloToMenu(_ sender: Any) {
-        self.performSegue(withIdentifier: "backmenu", sender: nil)
-    }
-    
-    
+class DashboardTableViewController: UITableViewController {
+    var arrayPlayerScores:Array<String> = []
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,15 +18,12 @@ class ResumeTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        
-        if let results = UserDefaults.standard.value(forKey: "results")  {
-            arrayResult = results as! Array<Any?>
-            print(arrayResult)
-        }
-        
-        if let results = UserDefaults.standard.value(forKey: "PlayerAnswers")  {
-            playerAnswers = results as! Array<Bool?>
-            print(playerAnswers)
+        if let results = UserDefaults.standard.stringArray(forKey: "scores_player")  {
+            self.arrayPlayerScores = results
+            if (self.arrayPlayerScores.count == 0) {
+                arrayPlayerScores.append("You doesn't play any solo quizz yet")
+            }
+            print(arrayPlayerScores)
         }
     }
 
@@ -47,46 +35,20 @@ class ResumeTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 11
+        //Return the number of rows
+        //Adapt the number by the length of UserDefaults.standard.object(forKey: "scores_player"
+        return arrayPlayerScores.count
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseDashboardIdentifier", for: indexPath)
+
         // Configure the cell...
-        if (indexPath.row < 10) {
-            if let valueAnswer = arrayResult[indexPath.row] {
-                if let valuePlayerAnswer = playerAnswers[indexPath.row] {
-                    var playerAnswerStr = ""
-                    if valuePlayerAnswer==true {
-                        playerAnswerStr = "True"
-                    } else {
-                        playerAnswerStr = "False"
-                    }
-                    cell.textLabel?.text = valueAnswer as! String +  " - Your answer:" + playerAnswerStr
-                    //print(valueAnswer as! String)
-                    if (playerAnswerStr == valueAnswer as! String) {
-                        cell.textLabel?.textColor = UIColor.green
-                        numberGoodAnswers = numberGoodAnswers + 1
-                    } else {
-                        cell.textLabel?.textColor = UIColor.red
-                    }
-                }
-            }
-        } else {
-            cell.textLabel?.text = "Your score: \(numberGoodAnswers)"
-            let formatter = DateFormatter()
-            formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-            let dateString = formatter.string(from: Date())
-            let scoreToStore = dateString + " - \(numberGoodAnswers)/10"
-            var playerScores = UserDefaults.standard.stringArray(forKey: "scores_player")
-            playerScores?.append(scoreToStore)
-            UserDefaults.standard.set(playerScores, forKey: "scores_player")
-        }
+        cell.textLabel?.text = arrayPlayerScores[indexPath.row]
+        
         return cell
     }
-
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

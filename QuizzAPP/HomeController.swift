@@ -20,6 +20,9 @@ class HomeController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        if (UserDefaults.standard.stringArray(forKey: "scores_player") == nil)  {
+           UserDefaults.standard.set([], forKey: "scores_player")
+        }
     }
 
     @IBAction func buttonHome(_ sender: UIButton) {

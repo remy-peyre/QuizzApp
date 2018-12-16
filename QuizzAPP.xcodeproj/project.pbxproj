@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B93471F2F78EA0C837EE07F3 /* Pods_QuizzAPP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F8DACF9C8CF300093E74614 /* Pods_QuizzAPP.framework */; };
+		CE28743621C6440F00A37912 /* DashboardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE28743521C6440F00A37912 /* DashboardTableViewController.swift */; };
 		CE6D060821C5D179002A87B2 /* ChoosePlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6D060721C5D179002A87B2 /* ChoosePlayerController.swift */; };
 		CEFA776221BFF0240004C6BA /* ResumeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA776121BFF0240004C6BA /* ResumeTableViewController.swift */; };
 		DFE8876721AC38A700B1D9F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE8876621AC38A700B1D9F0 /* AppDelegate.swift */; };
@@ -25,6 +26,7 @@
 		11F2F5E89602F555107258D6 /* Pods-QuizzAPP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuizzAPP.release.xcconfig"; path = "Pods/Target Support Files/Pods-QuizzAPP/Pods-QuizzAPP.release.xcconfig"; sourceTree = "<group>"; };
 		24A45D76069A2426E4B2C9E2 /* Pods-QuizzAPP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuizzAPP.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QuizzAPP/Pods-QuizzAPP.debug.xcconfig"; sourceTree = "<group>"; };
 		6F8DACF9C8CF300093E74614 /* Pods_QuizzAPP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuizzAPP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE28743521C6440F00A37912 /* DashboardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTableViewController.swift; sourceTree = "<group>"; };
 		CE6D060721C5D179002A87B2 /* ChoosePlayerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosePlayerController.swift; sourceTree = "<group>"; };
 		CEFA776121BFF0240004C6BA /* ResumeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeTableViewController.swift; sourceTree = "<group>"; };
 		DFE8876321AC38A700B1D9F0 /* QuizzAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuizzAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,6 +104,7 @@
 				DFE8877E21AC48FF00B1D9F0 /* MultiController.swift */,
 				CEFA776121BFF0240004C6BA /* ResumeTableViewController.swift */,
 				CE6D060721C5D179002A87B2 /* ChoosePlayerController.swift */,
+				CE28743521C6440F00A37912 /* DashboardTableViewController.swift */,
 			);
 			path = QuizzAPP;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 				DFE8877D21AC48F200B1D9F0 /* SoloController.swift in Sources */,
 				DFE8876721AC38A700B1D9F0 /* AppDelegate.swift in Sources */,
 				DFE8877921AC3D9100B1D9F0 /* HomeController.swift in Sources */,
+				CE28743621C6440F00A37912 /* DashboardTableViewController.swift in Sources */,
 				DFE8877F21AC48FF00B1D9F0 /* MultiController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

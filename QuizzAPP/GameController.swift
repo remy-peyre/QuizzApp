@@ -12,13 +12,16 @@ class GameController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func buttonDashboard(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "linkToDashboard", sender: nil)
     }
     
     @IBOutlet weak var buttonSolo: UIButton!
