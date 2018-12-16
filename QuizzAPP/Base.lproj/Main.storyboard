@@ -632,7 +632,6 @@
         <image name="mode" width="168" height="300"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="bRb-AE-eUF"/>
-        <segue reference="Lp6-Fx-kPB"/>
+        <segue reference="Ljb-UN-xEY"/>
     </inferredMetricsTieBreakers>
 </document>

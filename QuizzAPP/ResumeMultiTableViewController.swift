@@ -23,6 +23,8 @@ class ResumeMultiTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.backgroundView = UIImageView(image: UIImage(named: "mode"))
+        
         print("resume array players",self.arrayPlayers)
         print("resume array good", self.arrayGoodAnswers)
         print("resume array players answers",self.arrayPlayerAnswers)
@@ -41,6 +43,9 @@ class ResumeMultiTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        tableView.backgroundColor = .clear
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseResumeMultiIdentifier", for: indexPath)
         // Configure the cell...
         

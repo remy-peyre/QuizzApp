@@ -18,6 +18,8 @@ class DashboardTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.backgroundView = UIImageView(image: UIImage(named: "mode"))
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -47,6 +49,9 @@ class DashboardTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        tableView.backgroundColor = .clear
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseDashboardIdentifier", for: indexPath)
 
         // Configure the cell...
