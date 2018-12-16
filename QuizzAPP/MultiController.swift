@@ -9,11 +9,12 @@
 import UIKit
 
 class MultiController: UIViewController {
-
+    var arrayPlayers: Array<String> = []
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        print(self.arrayPlayers)
     }
 
     override func didReceiveMemoryWarning() {

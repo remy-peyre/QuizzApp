@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="36q-8Q-tEu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Sdm-iw-rGd">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -138,12 +138,71 @@
                         <outlet property="buttonMulti" destination="WwZ-Qx-mLM" id="QPZ-1i-KbX"/>
                         <outlet property="buttonSolo" destination="KJV-15-58I" id="Wd3-01-SLP"/>
                         <segue destination="36q-8Q-tEu" kind="presentation" identifier="linkToSolo" id="bRb-AE-eUF"/>
-                        <segue destination="rcD-yd-UcF" kind="presentation" identifier="linkToMulti" id="yxD-SZ-csc"/>
+                        <segue destination="1rt-Aw-EFb" kind="presentation" identifier="linkToMulti" id="NIu-UJ-UuL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ga4-cf-jTn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1405.5999999999999" y="130.88455772113943"/>
+        </scene>
+        <!--Choose Player Controller-->
+        <scene sceneID="A5l-DU-Dln">
+            <objects>
+                <viewController id="1rt-Aw-EFb" customClass="ChoosePlayerController" customModule="QuizzAPP" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xgz-sn-2P0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Choose the players" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1qJ-MP-QVU">
+                                <rect key="frame" x="113" y="57" width="148" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u4c-5q-bm5">
+                                <rect key="frame" x="57" y="207" width="261" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kFO-Yn-9iY">
+                                <rect key="frame" x="62" y="273" width="106" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Valid the player"/>
+                                <connections>
+                                    <action selector="validPlayerButton:" destination="1rt-Aw-EFb" eventType="touchUpInside" id="ysl-rx-Di9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1sF-TC-yRu">
+                                <rect key="frame" x="235" y="273" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Play"/>
+                                <connections>
+                                    <action selector="playTheGameButton:" destination="1rt-Aw-EFb" eventType="touchUpInside" id="FcF-pS-04V"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Type your name - player 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Kl-61-dUU">
+                                <rect key="frame" x="107" y="142" width="233" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="vGr-gd-Fhp"/>
+                    </view>
+                    <connections>
+                        <outlet property="playerNameField" destination="u4c-5q-bm5" id="vla-hf-g5z"/>
+                        <outlet property="typePlayerLabel" destination="3Kl-61-dUU" id="aBn-6r-4om"/>
+                        <segue destination="rcD-yd-UcF" kind="presentation" identifier="linkToMultiGame" id="RQa-cv-6ep"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uUu-f1-1GL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2525.5999999999999" y="130.88455772113943"/>
         </scene>
         <!--Multi Controller-->
         <scene sceneID="iKa-uL-b8M">
@@ -214,7 +273,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6pF-FG-9WO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2400.8000000000002" y="496.10194902548727"/>
+            <point key="canvasLocation" x="3482" y="131"/>
         </scene>
         <!--Solo Controller-->
         <scene sceneID="F9b-mv-hIM">
@@ -289,7 +348,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qa3-9T-Ugy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2407.1999999999998" y="-241.52923538230885"/>
+            <point key="canvasLocation" x="2761" y="-660"/>
         </scene>
         <!--Resume Table View Controller-->
         <scene sceneID="xno-gb-h2M">
