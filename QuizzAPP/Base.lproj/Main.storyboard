@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Sdm-iw-rGd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DID-MB-zRI">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -36,8 +36,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="center" semanticContentAttribute="forceRightToLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="bghome" translatesAutoresizingMaskIntoConstraints="NO" id="wnj-yH-wTg">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="949"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mode" translatesAutoresizingMaskIntoConstraints="NO" id="Rd0-o8-iSP">
+                                <rect key="frame" x="0.0" y="0.0" width="455" height="753"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m2v-7i-2iS">
                                 <rect key="frame" x="134" y="517.5" width="107" height="49"/>
@@ -102,7 +103,6 @@
                             <constraint firstItem="m2v-7i-2iS" firstAttribute="top" secondItem="QIj-u1-vk5" secondAttribute="bottom" constant="44" id="4T9-sM-9JS"/>
                             <constraint firstItem="QIj-u1-vk5" firstAttribute="top" secondItem="6jV-1g-gs5" secondAttribute="bottom" constant="47.5" id="4cd-cO-MqT"/>
                             <constraint firstItem="6jV-1g-gs5" firstAttribute="leading" secondItem="uGj-Rr-LqX" secondAttribute="leading" constant="134" id="4qQ-5A-hqe"/>
-                            <constraint firstItem="wnj-yH-wTg" firstAttribute="top" secondItem="x2T-Ng-5OG" secondAttribute="bottom" constant="-167" id="Dvk-yN-20I"/>
                             <constraint firstItem="m2v-7i-2iS" firstAttribute="leading" secondItem="uGj-Rr-LqX" secondAttribute="leading" constant="134" id="OBr-Ne-um7"/>
                             <constraint firstItem="GCx-3B-XJZ" firstAttribute="top" secondItem="uub-GZ-b1W" secondAttribute="bottom" constant="24" id="RoT-89-vv9"/>
                             <constraint firstItem="uGj-Rr-LqX" firstAttribute="trailing" secondItem="uub-GZ-b1W" secondAttribute="trailing" constant="134" id="Slx-cD-gCl"/>
@@ -218,7 +218,9 @@
                         <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="iU2-e6-JWw">
                             <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="Back to menu"/>
+                            <state key="normal" title="Back to menu">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
                             <connections>
                                 <action selector="dashboardToMenu:" destination="WYz-ys-zYz" eventType="touchUpInside" id="ijb-fT-uPr"/>
                                 <segue destination="Sdm-iw-rGd" kind="presentation" identifier="DashboardToMenu" id="Ljb-UN-xEY"/>
@@ -353,7 +355,9 @@
                         <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4Iv-TC-Hfb">
                             <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="Back to menu"/>
+                            <state key="normal" title="Back to menu">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
                             <connections>
                                 <action selector="btnMultiToMenu:" destination="efv-fP-SVr" eventType="touchUpInside" id="BLC-uZ-Rca"/>
                                 <segue destination="Sdm-iw-rGd" kind="presentation" identifier="multiBackToMenu" id="9Vv-pz-3Os"/>
@@ -598,7 +602,9 @@
                         <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="vYr-eH-8rr">
                             <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="back to menu"/>
+                            <state key="normal" title="back to menu">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
                             <connections>
                                 <action selector="btnSoloToMenu:" destination="eWu-dH-Qqb" eventType="touchUpInside" id="ef7-Wz-o5W"/>
                             </connections>
@@ -628,10 +634,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bghome" width="534" height="949"/>
         <image name="mode" width="168" height="300"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Ljb-UN-xEY"/>
+        <segue reference="Lp6-Fx-kPB"/>
     </inferredMetricsTieBreakers>
 </document>
