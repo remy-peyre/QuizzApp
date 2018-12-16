@@ -60,7 +60,10 @@ class SoloController: UIViewController {
         let question = self.questions[self.numberQuestion] as? NSDictionary
         
         self.numberQuestionField.text = "\(self.numberQuestion + 1)"
-        self.questionField.text = question?["question"] as! String
+        let questionText = question?["question"] as? String
+        let questionTextDecoded = questionText?.htmlDecoded
+ 
+        self.questionField.text = questionTextDecoded
         if (self.seconds == 0) {
             self.numberQuestion = self.numberQuestion + 1
             self.seconds = 11
@@ -116,4 +119,15 @@ class SoloController: UIViewController {
         // Pass the selected object to the new view controller.
     }
 */
+}
+
+extension String {
+    var htmlDecoded: String {
+        let decoded = try? NSAttributedString(data: Data(utf8), options: [
+            .documentType: NSAttributedString.DocumentType.html,
+            .characterEncoding: String.Encoding.utf8.rawValue
+            ], documentAttributes: nil).string
+        
+        return decoded ?? self
+    }
 }
