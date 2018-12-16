@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DID-MB-zRI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Sdm-iw-rGd">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -146,32 +146,53 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KJV-15-58I">
-                                <rect key="frame" x="172" y="182" width="31" height="30"/>
+                            <imageView userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mode" highlightedImage="mode" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tZn-E8-j8o">
+                                <rect key="frame" x="0.0" y="0.0" width="452" height="775"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Solo"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KJV-15-58I">
+                                <rect key="frame" x="111" y="136" width="153" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Solo">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="buttonSolo:" destination="Sdm-iw-rGd" eventType="touchUpInside" id="YlY-0W-wXR"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WwZ-Qx-mLM">
-                                <rect key="frame" x="170" y="413" width="34" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Multi"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WwZ-Qx-mLM">
+                                <rect key="frame" x="111" y="313" width="153" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Multi">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="buttonMulti:" destination="Sdm-iw-rGd" eventType="touchUpInside" id="r8o-zb-afr"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2RS-t1-GQI">
-                                <rect key="frame" x="150" y="540" width="75" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Dashboard"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2RS-t1-GQI">
+                                <rect key="frame" x="111" y="490" width="153" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Dashboard">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="buttonDashboard:" destination="Sdm-iw-rGd" eventType="touchUpInside" id="VvQ-cj-QbG"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="SaF-hq-5qa" firstAttribute="trailing" secondItem="2RS-t1-GQI" secondAttribute="trailing" constant="111" id="ErP-fR-VFe"/>
+                            <constraint firstItem="WwZ-Qx-mLM" firstAttribute="leading" secondItem="SaF-hq-5qa" secondAttribute="leading" constant="111" id="Hte-kq-H7y"/>
+                            <constraint firstItem="2RS-t1-GQI" firstAttribute="top" secondItem="WwZ-Qx-mLM" secondAttribute="bottom" constant="129" id="Quo-d2-0RO"/>
+                            <constraint firstItem="WwZ-Qx-mLM" firstAttribute="top" secondItem="KJV-15-58I" secondAttribute="bottom" constant="129" id="bP9-bT-C8e"/>
+                            <constraint firstItem="KJV-15-58I" firstAttribute="top" secondItem="SaF-hq-5qa" secondAttribute="top" constant="116" id="djd-Yt-5dR"/>
+                            <constraint firstItem="2RS-t1-GQI" firstAttribute="leading" secondItem="SaF-hq-5qa" secondAttribute="leading" constant="111" id="kiW-p2-5cn"/>
+                            <constraint firstItem="KJV-15-58I" firstAttribute="leading" secondItem="SaF-hq-5qa" secondAttribute="leading" constant="111" id="mFT-gH-eNW"/>
+                            <constraint firstItem="SaF-hq-5qa" firstAttribute="trailing" secondItem="WwZ-Qx-mLM" secondAttribute="trailing" constant="111" id="rAl-Yu-Jwa"/>
+                            <constraint firstItem="SaF-hq-5qa" firstAttribute="trailing" secondItem="KJV-15-58I" secondAttribute="trailing" constant="111" id="zSe-42-FPu"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="SaF-hq-5qa"/>
                     </view>
                     <connections>
@@ -184,7 +205,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ga4-cf-jTn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1516" y="131"/>
+            <point key="canvasLocation" x="1516" y="130.88455772113943"/>
         </scene>
         <!--Dashboard Table View Controller-->
         <scene sceneID="nla-JQ-ie0">
@@ -500,6 +521,7 @@
     </scenes>
     <resources>
         <image name="bghome" width="534" height="949"/>
+        <image name="mode" width="168" height="300"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="GDb-OB-Xym"/>
