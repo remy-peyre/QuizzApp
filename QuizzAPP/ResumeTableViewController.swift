@@ -12,7 +12,6 @@ class ResumeTableViewController: UITableViewController {
     let textField = UITextField()
     var arrayResult:Array<String> = []
     var playerAnswers:Array<String> = []
-    var playerAnswersTest:Array<String> = []
     var numberGoodAnswers = 0
     
     @IBAction func btnSoloToMenu(_ sender: Any) {
@@ -57,8 +56,8 @@ class ResumeTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
         // Configure the cell...
         if (indexPath.row < 10) {
-            cell.textLabel?.text = arrayResult[indexPath.row] +  " - Your answer:" + arrayResult[indexPath.row]
-            if (arrayResult[indexPath.row] == arrayResult[indexPath.row]) {
+            cell.textLabel?.text = arrayResult[indexPath.row] +  " - Your answer:" + playerAnswers[indexPath.row]
+            if (arrayResult[indexPath.row] == playerAnswers[indexPath.row]) {
                 cell.textLabel?.textColor = UIColor.green
                 numberGoodAnswers = numberGoodAnswers + 1
             } else {
