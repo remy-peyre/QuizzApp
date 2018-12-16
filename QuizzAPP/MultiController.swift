@@ -97,7 +97,7 @@ class MultiController: UIViewController {
         let question = self.questions[self.numberQuestion] as? NSDictionary
         if let answer = question?["correct_answer"]{
             arrayGoodAnswers.append(answer)
-            arrayPlayerAnswers.append(convertBoolToString(value: value))
+            arrayPlayerAnswers.append("\(self.currentPlayer)-" + arrayPlayers[self.currentPlayer] + "-" +  convertBoolToString(value: value))
         }
         self.currentPlayer = self.currentPlayer + 1
         print(self.currentPlayer)
@@ -113,6 +113,7 @@ class MultiController: UIViewController {
         seconds = seconds - 1
         if (self.numberQuestion > (self.totalQuestions - 1)) {
             timer.invalidate()
+            print("playeranswers",arrayPlayerAnswers)
             UserDefaults.standard.set(arrayGoodAnswers, forKey:"results")
             UserDefaults.standard.set(arrayPlayerAnswers, forKey:"PlayerAnswers")
             self.performSegue(withIdentifier: "resumeMulti", sender: nil)
