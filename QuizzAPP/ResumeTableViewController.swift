@@ -28,6 +28,8 @@ class ResumeTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
+        tableView.backgroundView = UIImageView(image: UIImage(named: "mode"))
+        
         if let results = UserDefaults.standard.stringArray(forKey: "results")  {
             arrayResult = results
             print("array result:", arrayResult)
@@ -53,6 +55,9 @@ class ResumeTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        tableView.backgroundColor = .clear
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
         // Configure the cell...
         if (indexPath.row < 10) {
