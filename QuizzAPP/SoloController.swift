@@ -52,9 +52,8 @@ class SoloController: UIViewController {
         seconds = seconds - 1
         if (self.numberQuestion > 9) {
             timer.invalidate()
-            UserDefaults.standard.set(arrayGoodAnswers, forKey:"results")
-            UserDefaults.standard.set(arrayPlayerAnswers, forKey:"PlayerAnswers")
             self.performSegue(withIdentifier: "resume", sender: nil)
+            
             return
         }
         let question = self.questions[self.numberQuestion] as? NSDictionary
@@ -94,7 +93,6 @@ class SoloController: UIViewController {
                 let status = json["response_code"] as! Int
                 if status == 0 {
                     self.questions = json["results"] as! Array<Any?>
-                    let questionsSize =  self.questions.count  as Int
                     print("OK")
                 }
             }
@@ -110,15 +108,18 @@ class SoloController: UIViewController {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if let resumeTableViewController = segue.destination as? ResumeTableViewController {
+            resumeTableViewController.arrayResult = self.arrayGoodAnswers as! Array<String>
+            resumeTableViewController.playerAnswers = self.arrayPlayerAnswers
+        }
     }
-*/
 }
 
 extension String {

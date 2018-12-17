@@ -16,7 +16,7 @@ class MultiController: UIViewController {
     var numberQuestion = 0
     var questions: Array<Any?> = []
     
-    var seconds = 10 //This variable will hold a starting value of seconds. It could
+    var seconds = 10
     var timer = Timer()
     var arrayGoodAnswers:Array<Any> = []
     var arrayPlayerAnswers:Array<String> = []
@@ -37,8 +37,6 @@ class MultiController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         getQuestions()
         
     }
@@ -48,12 +46,7 @@ class MultiController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
         if let resumeMultiTableViewController = segue.destination as? ResumeMultiTableViewController {
             resumeMultiTableViewController.arrayPlayers = self.arrayPlayers
             resumeMultiTableViewController.arrayGoodAnswers = self.arrayGoodAnswers
@@ -76,15 +69,10 @@ class MultiController: UIViewController {
                 let status = json["response_code"] as! Int
                 if status == 0 {
                     self.questions = json["results"] as! Array<Any?>
-                    let questionsSize =  self.questions.count  as Int
                     self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.handleEverySecond), userInfo: nil, repeats: true)
                     print("OK")
                 }
             }
-            
-            /*if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
-             print("Data: \(utf8Text)") // original server data as UTF8 string
-             }*/
         }
     }
     
@@ -116,10 +104,8 @@ class MultiController: UIViewController {
         seconds = seconds - 1
         if (self.numberQuestion > (self.totalQuestions - 1)) {
             timer.invalidate()
-            print("playeranswers",arrayPlayerAnswers)
-            //UserDefaults.standard.set(arrayGoodAnswers, forKey:"results")
-            //UserDefaults.standard.set(arrayPlayerAnswers, forKey:"PlayerAnswers")
             self.performSegue(withIdentifier: "resumeMulti", sender: nil)
+            
             return
         }
         let question = self.questions[self.numberQuestion] as? NSDictionary

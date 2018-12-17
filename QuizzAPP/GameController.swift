@@ -26,13 +26,11 @@ class GameController: UIViewController {
     
     @IBOutlet weak var buttonSolo: UIButton!
     @IBAction func buttonSolo(_ sender: Any) {
-        print("Solo")
         self.performSegue(withIdentifier: "linkToSolo", sender: nil)
     }
     
     @IBOutlet weak var buttonMulti: UIButton!
     @IBAction func buttonMulti(_ sender: UIButton) {
-        print("Multi")
         self.performSegue(withIdentifier: "linkToMulti", sender: nil)
     }
     

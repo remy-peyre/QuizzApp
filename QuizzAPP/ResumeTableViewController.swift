@@ -29,16 +29,6 @@ class ResumeTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
         tableView.backgroundView = UIImageView(image: UIImage(named: "mode"))
-        
-        if let results = UserDefaults.standard.stringArray(forKey: "results")  {
-            arrayResult = results
-            print("array result:", arrayResult)
-        }
-        
-        if let results = UserDefaults.standard.stringArray(forKey: "PlayerAnswers")  {
-            playerAnswers = results
-            print("player answers:",playerAnswers)
-        }
     }
 
     // MARK: - Table view data source
