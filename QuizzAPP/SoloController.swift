@@ -22,6 +22,12 @@ class SoloController: UIViewController {
     @IBOutlet weak var numberQuestionField: UILabel!
     @IBOutlet weak var questionField: UILabel!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+        getQuestions(numberQuestions: 10)
+    }
+    
     @IBAction func buttonTrue(_ sender: Any) {
         answer(value: true)
     }
@@ -30,24 +36,7 @@ class SoloController: UIViewController {
         answer(value: false)
     }
     
-    func convertBoolToString(value: Bool) -> String {
-        if value {
-            return "True"
-        } else {
-            return "False"
-        }
-    }
-    
-    func answer(value : Bool) {
-        let question = self.questions[self.numberQuestion] as? NSDictionary
-        if let answer = question?["correct_answer"]{
-            arrayGoodAnswers.append(answer)
-            arrayPlayerAnswers.append(convertBoolToString(value: value))
-        }
-        numberQuestion = numberQuestion + 1
-        seconds = 11
-    }
-    
+
     @objc func handleEverySecond() {
         seconds = seconds - 1
         if (self.numberQuestion > (self.totalQuestions - 1)) {
@@ -61,7 +50,7 @@ class SoloController: UIViewController {
         self.numberQuestionField.text = "\(self.numberQuestion + 1)"
         let questionText = question?["question"] as? String
         let questionTextDecoded = questionText?.htmlDecoded
- 
+        
         self.questionField.text = questionTextDecoded
         if (self.seconds == 0) {
             self.numberQuestion = self.numberQuestion + 1
@@ -70,12 +59,14 @@ class SoloController: UIViewController {
         self.counterField.text = "\(self.seconds)s"
     }
     
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        getQuestions(numberQuestions: 10)
+    func answer(value : Bool) {
+        let question = self.questions[self.numberQuestion] as? NSDictionary
+        if let answer = question?["correct_answer"]{
+            arrayGoodAnswers.append(answer)
+            arrayPlayerAnswers.append(convertBoolToString(value: value))
+        }
+        numberQuestion = numberQuestion + 1
+        seconds = 11
     }
     
     func getQuestions(numberQuestions:Int) {
@@ -101,6 +92,7 @@ class SoloController: UIViewController {
             }*/
         }
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -117,6 +109,14 @@ class SoloController: UIViewController {
         if let resumeTableViewController = segue.destination as? ResumeTableViewController {
             resumeTableViewController.arrayResult = self.arrayGoodAnswers as! Array<String>
             resumeTableViewController.playerAnswers = self.arrayPlayerAnswers
+        }
+    }
+    
+    func convertBoolToString(value: Bool) -> String {
+        if value {
+            return "True"
+        } else {
+            return "False"
         }
     }
 }
