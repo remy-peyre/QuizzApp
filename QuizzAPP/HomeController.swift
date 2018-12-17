@@ -26,6 +26,7 @@ class HomeController: UIViewController {
         self.view.addSubview(imgBg)*/
 
         // Do any additional setup after loading the view.
+        self.passwordField.isSecureTextEntry = true
         if (UserDefaults.standard.stringArray(forKey: "scores_player") == nil)  {
            UserDefaults.standard.set([], forKey: "scores_player")
         }

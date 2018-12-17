@@ -53,6 +53,10 @@ class SoloController: UIViewController {
         
         self.questionField.text = questionTextDecoded
         if (self.seconds == 0) {
+            if let answer = question?["correct_answer"]{
+                arrayGoodAnswers.append(answer)
+                arrayPlayerAnswers.append("Miss")
+            }
             self.numberQuestion = self.numberQuestion + 1
             self.seconds = 11
         }
