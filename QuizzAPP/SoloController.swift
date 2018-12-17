@@ -76,7 +76,6 @@ class SoloController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         //self.runTimer()
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(handleEverySecond), userInfo: nil, repeats: true)
         getQuestions()
     }
     
@@ -93,7 +92,7 @@ class SoloController: UIViewController {
                 let status = json["response_code"] as! Int
                 if status == 0 {
                     self.questions = json["results"] as! Array<Any?>
-                    print("OK")
+                    self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.handleEverySecond), userInfo: nil, repeats: true)
                 }
             }
             
