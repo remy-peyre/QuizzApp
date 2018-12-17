@@ -40,7 +40,7 @@ class ResumeTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 11
+        return arrayResult.count + 1
     }
 
     
@@ -50,7 +50,7 @@ class ResumeTableViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
         // Configure the cell...
-        if (indexPath.row < 10) {
+        if (indexPath.row < self.arrayResult.count) {
             cell.textLabel?.text = arrayResult[indexPath.row] +  " - Your answer:" + playerAnswers[indexPath.row]
             if (arrayResult[indexPath.row] == playerAnswers[indexPath.row]) {
                 cell.textLabel?.textColor = UIColor.green

@@ -37,7 +37,7 @@ class MultiController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getQuestions()
+        getQuestions(numberQuestionsPerPlayer: 5)
         
     }
 
@@ -55,8 +55,8 @@ class MultiController: UIViewController {
     }
     
 
-    func getQuestions() {
-        self.totalQuestions = self.arrayPlayers.count*5
+    func getQuestions(numberQuestionsPerPlayer: Int) {
+        self.totalQuestions = self.arrayPlayers.count * numberQuestionsPerPlayer
         let head = ["Content-Type": "application/x-www-form-urlencoded"]
         Alamofire.request("https://opentdb.com/api.php?amount=\(self.totalQuestions)&type=boolean", method: .post, encoding: URLEncoding(), headers: head).responseJSON { response in
             print("Request: \(String(describing: response.request))")   // original url request

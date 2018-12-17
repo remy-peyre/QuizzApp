@@ -12,7 +12,7 @@ import Alamofire
 class SoloController: UIViewController {
     var numberQuestion = 0
     var questions: Array<Any?> = []
-    
+    var totalQuestions: Int = 0
     var seconds = 10 //This variable will hold a starting value of seconds. It could
     var timer = Timer()
     var arrayGoodAnswers:Array<Any> = []
@@ -50,7 +50,7 @@ class SoloController: UIViewController {
     
     @objc func handleEverySecond() {
         seconds = seconds - 1
-        if (self.numberQuestion > 9) {
+        if (self.numberQuestion > (self.totalQuestions - 1)) {
             timer.invalidate()
             self.performSegue(withIdentifier: "resume", sender: nil)
             
@@ -75,13 +75,13 @@ class SoloController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        //self.runTimer()
-        getQuestions()
+        getQuestions(numberQuestions: 10)
     }
     
-    func getQuestions() {
+    func getQuestions(numberQuestions:Int) {
+        self.totalQuestions = numberQuestions
         let head = ["Content-Type": "application/x-www-form-urlencoded"]
-        Alamofire.request("https://opentdb.com/api.php?amount=10&type=boolean", method: .post, encoding: URLEncoding(), headers: head).responseJSON { response in
+        Alamofire.request("https://opentdb.com/api.php?amount=\(self.totalQuestions)&type=boolean", method: .post, encoding: URLEncoding(), headers: head).responseJSON { response in
             print("Request: \(String(describing: response.request))")   // original url request
             print("Response: \(String(describing: response.response))") // http url response
             print("Result: \(response.result)")                         // response serialization result
