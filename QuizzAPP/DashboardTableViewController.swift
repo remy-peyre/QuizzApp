@@ -50,10 +50,10 @@ class DashboardTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        tableView.backgroundColor = .clear
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseDashboardIdentifier", for: indexPath)
-
+        cell.backgroundColor = .clear
+        cell.textLabel?.textColor = UIColor.white
+        
         // Configure the cell...
         cell.textLabel?.text = arrayPlayerScores[indexPath.row]
         

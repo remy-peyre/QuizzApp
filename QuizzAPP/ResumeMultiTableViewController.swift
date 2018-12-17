@@ -43,10 +43,10 @@ class ResumeMultiTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        tableView.backgroundColor = .clear
-        
+                
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseResumeMultiIdentifier", for: indexPath)
+        cell.backgroundColor = .clear
+        cell.textLabel?.textColor = UIColor.white
         // Configure the cell...
         
         if (indexPath.row < self.arrayGoodAnswers.count) {
